@@ -34,13 +34,13 @@ export default function App(){
     }, [users]);
 
     return (
-        <div>
-            <aside>
+        <div className="container">
+            <aside className="sidebar">
                 <SearchInput value={search} onChange={setSearch} />
                 <FilterDropdown value={city} onChange={setCity} options={cityOptions} />
             </aside>
 
-            <main>
+            <main className="content">
                 <select value={sortOrder} onChange={e => setSortOrder(e.target.value)}>
                     <option value="asc">Name A-Z</option>
                     <option value="desc">Name Z-A</option>
