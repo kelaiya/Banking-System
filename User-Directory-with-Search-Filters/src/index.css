@@ -1,0 +1,132 @@
+/* ===== Global styles ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* ===== Container layout ===== */
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ===== Sidebar (filters) ===== */
+.sidebar {
+  width: 250px;
+  padding: 16px;
+  background-color: #f4f4f4;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Inputs and dropdowns */
+.sidebar input,
+.sidebar select {
+  padding: 8px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
+}
+
+.sidebar input:focus,
+.sidebar select:focus {
+  border-color: #0070f3;
+}
+
+/* ===== Main content ===== */
+.content {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+/* ===== Status messages ===== */
+.content p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.content p.error {
+  color: red;
+  font-weight: bold;
+}
+
+.content p.loading {
+  color: #555;
+  font-style: italic;
+}
+
+/* ===== User list ===== */
+.user-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.user-card {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.user-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* ===== User card content ===== */
+.user-card h4 {
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+.user-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ===== Sort dropdown ===== */
+.sort-container {
+  margin-bottom: 10px;
+}
+
+.sort-container select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .content {
+    padding: 8px;
+  }
+  .user-list {
+    grid-template-columns: 1fr;
+  }
+}
